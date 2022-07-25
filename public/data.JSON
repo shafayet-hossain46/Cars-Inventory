@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Rolls Royce",
+        "id": 1,
+        "img": "https://www.drivespark.com/images/2022-05/2022-rolls-royce-boat-tail-4.jpg",
+        "price": 800000,
+        "quantity": 2,
+        "supplier": "Rolls Royce Team",
+        "description": "Rolls-Royce Motor Cars Limited is a British luxury automobile maker."
+    },
+    {
+        "name": "Ferrari",
+        "id": 5,
+        "img": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-1.2.1&w=1080&fit=max&q=80&fm=jpg&crop=entropy&cs=tinysrgb",
+        "price": 900000,
+        "quantity": 7,
+        "supplier": "Ferrari Team",
+        "description": "Ferraris are what dreams are made of. Fast, sexy, and highly exclusive,"
+    },
+    {
+        "name": "Range Rover",
+        "id": 6,
+        "img": "https://stimg.cardekho.com/images/carexteriorimages/930x620/Land-Rover/Range-Rover-Sport/9115/1653022703223/front-left-side-47.jpg",
+        "price": 600000,
+        "quantity": 20,
+        "supplier": "Range Rover Team",
+        "description": "The Land Rover Range Rover is a 4x4 motor car produced by Land Rover,"
+    },
+    {
+        "name": "BMW",
+        "id": 2,
+        "img": "https://www.topgear.com/sites/default/files/cars-car/image/2015/02/buyers_guide_-_bmw_6_convertible_2014_-_front_quarter.jpg",
+        "price": 300000,
+        "quantity": 12,
+        "supplier": "BMW Team",
+        "description": "It originated in 1916 as Bayerische Flugzeug-Werke, a builder of aircraft engines."
+    },
+    {
+        "name": "Lamborghini",
+        "id": 3,
+        "img": "https://wallpapercave.com/wp/wp4622092.jpg",
+        "price": 500000,
+        "quantity": 8,
+        "supplier": "Lamborghini Team",
+        "description": "The Lamborghini SUV, Urus runs on a V-8 powered petrol engine that delivers a mileage "
+    },
+    {
+        "name": "Bugatti",
+        "id": 4,
+        "img": "https://i.pinimg.com/originals/84/cb/53/84cb530bd86af0ee8ae3ca3a4c507554.jpg",
+        "price": 600000,
+        "quantity": 4,
+        "supplier": "Bugatti Team",
+        "description": "The Bugatti Veyron EB 16.4 is a mid-engine sports car, designed and developed in France"
+    }
+]
