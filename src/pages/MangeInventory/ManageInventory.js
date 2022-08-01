@@ -46,12 +46,7 @@ const ManageInventory = () => {
     axios.post("http://localhost:5000/inventoryItem", newItems)
     .then((res) => {
       setItems([...item, res.data]); // Backend theke first e insert kore then findOne kore response e data ta send kora hoise r ekhane array te add kore dewa hoise
-      e.target.name.value = "";
-      e.target.supplier.value = "";
-      e.target.price.value = "";
-      e.target.quantity.value = "";
-      e.target.description.value = "";
-      e.target.img.value = "";
+      e.target.reset()
     });
   };
 

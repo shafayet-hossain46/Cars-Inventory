@@ -7,6 +7,8 @@ import NotFound from './pages/NotFound/NotFound';
 import Header from './Components/Header/Header';
 import ManageInventoryItem from './pages/ManageInventoryItem/ManageInventoryItem';
 import ManageInventory from './pages/MangeInventory/ManageInventory';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/manageInventory" element={<ManageInventory />} />
         <Route path="/manageInventoryItem/:id" element={<ManageInventoryItem />} />
         <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

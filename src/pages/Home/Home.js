@@ -7,7 +7,6 @@ const Home = () => {
         <div>
             <MyCarousel></MyCarousel>
             <InventorySection></InventorySection>
-            This is home
         </div>
     );
 };
