@@ -12,12 +12,10 @@ const ManageInventoryItem = () => {
 
     // Sending id and fetching single item
     const [item, setItem] = useState({})
-    console.log(item)
     const [quantity, setQuantity] = useState(0)
     useEffect(()=>{
         axios.get(`http://localhost:5000/manageInventoryItem/${id}`)
         .then(res => {
-            console.log(res);
             let newQuantity = res?.data?.quantity
             setQuantity(newQuantity)
             setItem(res.data);
@@ -28,7 +26,6 @@ const ManageInventoryItem = () => {
     const handleDeliveredButton = id => {
         axios.put(`http://localhost:5000/delivered/${id}`)
         .then(res => {
-            console.log(res.data)
             if(res.data.modifiedCount >= 0){
                 setQuantity(quantity - 1)
             }

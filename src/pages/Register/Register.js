@@ -3,8 +3,10 @@ import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../Firebase/Firebase.init';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
+    const navigate = useNavigate()
 
     // Crate User
     const [
@@ -25,6 +27,7 @@ const Register = () => {
         // Creating User
         createUserWithEmailAndPassword(email, password)
         e.target.reset()
+        navigate('/home')
     }
     return (
         <div className="w-25 mx-auto mt-5">

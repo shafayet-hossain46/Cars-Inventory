@@ -1,15 +1,15 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/Firebase.init'
 
 const Login = () => {
-    // Google Sing In
+
     const [signInWithGoogle, user] = useSignInWithGoogle(auth);
-    const googleSignIn = () => {
-        signInWithGoogle()
-    }
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location?.state?.from?.pathname || '/'; 
 
     // Sign In With Email And Password
     const [
@@ -19,12 +19,21 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    const onSubmitSignIn = e =>{
+    const onSubmitSignIn = async e =>{
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        signInWithEmailAndPassword(email, password);
-        e.target.reset();
+        await signInWithEmailAndPassword(email, password);
+        navigate(from, {replace: true})
+    }
+
+    if(user){
+        navigate(from, {replace: true})
+    }
+
+    // Google Sing In
+    const googleSignIn = () => {
+        signInWithGoogle()
     }
     
     return (
