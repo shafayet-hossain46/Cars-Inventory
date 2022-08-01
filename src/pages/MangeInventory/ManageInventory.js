@@ -10,9 +10,14 @@ import {
   Form,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../Firebase/Firebase.init";
+
 
 const ManageInventory = () => {
   const [item, setItems] = useState([]);
+  const [user, loading, error] = useAuthState(auth);
+  
   useEffect(() => {
     axios.get("http://localhost:5000/inventory").then((res) => {
       setItems(res.data);
@@ -34,6 +39,7 @@ const ManageInventory = () => {
 
     // Getting All The Field's Values;
     const name = e.target.name.value;
+    const email = e.target.email.value;
     const supplier = e.target.supplier.value;
     const price = e.target.price.value;
     const quantity = e.target.quantity.value;
@@ -42,7 +48,7 @@ const ManageInventory = () => {
 
     // insertedId
 
-    const newItems = { name, supplier, price, quantity, description, img };
+    const newItems = { name, supplier, price, quantity, description, img, email };
     axios.post("http://localhost:5000/inventoryItem", newItems)
     .then((res) => {
       setItems([...item, res.data]); // Backend theke first e insert kore then findOne kore response e data ta send kora hoise r ekhane array te add kore dewa hoise
@@ -130,6 +136,7 @@ const ManageInventory = () => {
           <h3 className="text-center mb-4 text-info">
             Add Inventory Items
           </h3>
+              <Form.Control type="email" className="mb-3" name="email" disabled value={user?.email} placeholder="Enter Name" />
               <Form.Control type="text" name="name" placeholder="Enter Name" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">

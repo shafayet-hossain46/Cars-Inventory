@@ -21,7 +21,7 @@ const Header = () => {
     return (
         <Navbar bg="primary" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="#">Cars-Stock</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -32,7 +32,11 @@ const Header = () => {
             <Nav.Link as={Link} to="/home" >Home</Nav.Link>
             <Nav.Link as={Link} to="/about" >About</Nav.Link>
             {
-              user?.uid ? <Nav.Link onClick={logOut}>Log-Out</Nav.Link> : 
+              user?.uid ? <>
+              <Nav.Link as={Link} to="/manageInventory">Manage-Items</Nav.Link>
+              <Nav.Link as={Link} to="/myItems">My-Items</Nav.Link>
+              <Nav.Link onClick={logOut}>Log-Out</Nav.Link>
+              </> : 
               <Nav.Link as={Link} to="/login" >Login</Nav.Link>
             }
             
