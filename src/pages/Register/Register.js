@@ -5,10 +5,8 @@ import { Link } from "react-router-dom";
 import auth from "../../Firebase/Firebase.init";
 import { useNavigate } from "react-router-dom";
 import img from '../../images/register.png'
-import { useSendEmailVerification } from 'react-firebase-hooks/auth';
 
 const Register = () => {
-  const [sendEmailVerification ] = useSendEmailVerification(auth);
   const navigate = useNavigate();
 
   // Crate User
