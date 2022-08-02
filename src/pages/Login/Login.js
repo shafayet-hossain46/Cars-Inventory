@@ -23,12 +23,13 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     await signInWithEmailAndPassword(email, password);
-    navigate(from, { replace: true });
   };
 
-  if (user) {
+  if (user || user1) {
     navigate(from, { replace: true });
   }
+
+  
 
   // Google Sing In
   const googleSignIn = () => {
@@ -92,6 +93,16 @@ const Login = () => {
                   >
                     Need An Account?
                   </Link>
+                  <p
+                    style={{
+                      color: "red",
+                      border: "none",
+                      textDecoration: "none",
+                    }}
+                  >
+                    {error?.message}
+                  </p> 
+                  
                 </div>
               </div>
             </div>
