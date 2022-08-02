@@ -25,11 +25,14 @@ const ManageInventory = () => {
   }, []);
 
   const handleDelete = (id) => {
+    const confirm = window.confirm('Are you sure you want to delete')
     axios.delete(`http://localhost:5000/inventoryItem/${id}`).then((res) => {
-      if (res.data.deletedCount > 0) {
-        const newItems = item.filter((item) => item._id !== id);
-        setItems(newItems);
-      }
+      if(confirm){
+        if (res.data.deletedCount > 0) {
+          const newItems = item.filter((item) => item._id !== id);
+          setItems(newItems);
+        }
+      }     
     });
   };
 

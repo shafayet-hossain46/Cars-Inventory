@@ -18,13 +18,16 @@ const MyItems = () => {
         }, [user])
 
 
-
+        // Deleting
         const handleDelete = (id) => {
+            const confirm = window.confirm('Are you sure you want to delete')
             axios.delete(`http://localhost:5000/inventoryItem/${id}`).then((res) => {
-              if (res.data.deletedCount > 0) {
-                const newItems = item.filter((item) => item._id !== id);
-                setItem(newItems);
-              }
+              if(confirm){
+                if (res.data.deletedCount > 0) {
+                    const newItems = item.filter((item) => item._id !== id);
+                    setItem(newItems);
+                  }
+              }               
             });
           };
         
@@ -32,7 +35,7 @@ const MyItems = () => {
     return (
         <Container>
             <div className="col-md-8 row">
-          <h2 className="text-center mb-4 text-info">Manage Inventory Items</h2>
+          <h2 className="text-center my-4 text-info">Your Items</h2>
           {item.map((item) => (
             <Col className="col-md-4 col-12">
               <Card
@@ -79,20 +82,9 @@ const MyItems = () => {
                       variant="danger"
                       size="lg"
                     >
-                      Delete Item
+                      Cancel Item
                     </Button>
                   </div>
-                  {/* <div className="d-grid gap-2 mt-2">
-                    <Button
-                      as={Link}
-                      to={`/manageInventoryItem/${item._id}`}
-                      className="text-white"
-                      variant="info"
-                      size="lg"
-                    >
-                      Manage
-                    </Button>
-                  </div> */}
                 </Card.Body>
               </Card>
             </Col>

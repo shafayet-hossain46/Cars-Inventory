@@ -23,7 +23,7 @@ const InventorySection = () => {
                     inventoryItem.slice(0, 6).map(item => <InventoryItem key={item._id} item={item}></InventoryItem>)
                 }
                 <div className="d-grid gap-2 mx-auto mt-4">
-                    <Button as={Link} to="/manageInventory" className="text-white" variant="primary" size="lg">
+                    <Button as={Link} to="/manageInventory" className="text-white" style={{ background: "#008080", border: "none" }} size="lg">
                         Mange Inventories
                     </Button>
                 </div>

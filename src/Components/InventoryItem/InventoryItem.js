@@ -13,13 +13,13 @@ const InventoryItem = (props) => {
         <Card.Body>
           <Card.Title style={{color: "#2C3A47"}}>{name}</Card.Title>
           <Card.Text>
-            <small><span style={{color: "#34e7e4",fontWeight: "bold"}}>Supplier</span>: {supplier}</small><br />
-            <small> <span style={{color: "#34e7e4",fontWeight: "bold"}}>Price $</span>{price}</small><br />
-            <small><span style={{color: "#34e7e4",fontWeight: "bold"}}>Quantity</span> {quantity}</small><br />
-            <span style={{color: "#34e7e4",fontWeight: "bold"}}>☐ </span>{description}
+            <small><span style={{color: "#008080",fontWeight: "bold"}}>Supplier</span>: {supplier}</small><br />
+            <small> <span style={{color: "#008080",fontWeight: "bold"}}>Price $</span>{price}</small><br />
+            <small><span style={{color: "#008080",fontWeight: "bold"}}>Quantity</span> {quantity}</small><br />
+            <span style={{color: "#008080",fontWeight: "bold"}}>☐ </span>{description}
           </Card.Text>
           <div className="d-grid gap-2">
-      <Button as={Link} to={`/manageInventoryItem/${_id}`} className="text-white" variant="info" size="lg">
+      <Button as={Link} to={`/manageInventoryItem/${_id}`} className="text-white" style={{ background: "#008080", border: "none" }} size="lg">
         Manage
       </Button>
     </div>

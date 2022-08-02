@@ -19,7 +19,7 @@ const Header = () => {
     signOut(auth)
   }
     return (
-        <Navbar bg="primary" variant="dark" expand="lg">
+        <Navbar style={{ background: "#008080"}} variant="dark" expand="lg">
       <Container>
         <Navbar.Brand href="#">Cars-Stock</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
