@@ -5,13 +5,15 @@ import { Link } from "react-router-dom";
 import auth from "../../Firebase/Firebase.init";
 import { useNavigate } from "react-router-dom";
 import img from '../../images/register.png'
+import { useSendEmailVerification } from 'react-firebase-hooks/auth';
 
 const Register = () => {
+  const [sendEmailVerification ] = useSendEmailVerification(auth);
   const navigate = useNavigate();
 
   // Crate User
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
 
   // OnSubmit
   const onSubmitData = (e) => {
@@ -25,6 +27,7 @@ const Register = () => {
     e.target.reset();
     navigate("/home");
   };
+
   return (
     <Container>
       <div className="row align-items-center justify-content-center px-5">

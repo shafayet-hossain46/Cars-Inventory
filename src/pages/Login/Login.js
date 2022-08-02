@@ -25,11 +25,11 @@ const Login = () => {
     await signInWithEmailAndPassword(email, password);
   };
 
+
   if (user || user1) {
     navigate(from, { replace: true });
   }
 
-  
 
   // Google Sing In
   const googleSignIn = () => {
