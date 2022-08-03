@@ -11,6 +11,7 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import RequireAuth from './RequireAuth/RequireAuth';
 import MyItems from './pages/MyItems/MyItems';
+import Footer from './Components/Footer/Footer'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

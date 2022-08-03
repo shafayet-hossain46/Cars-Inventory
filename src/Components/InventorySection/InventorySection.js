@@ -17,7 +17,7 @@ const InventorySection = () => {
 
 
     return (
-        <Container>
+        <Container className="py-5">
             <Row xs={1} md={3} className="mt-5">
                 {
                     inventoryItem.slice(0, 6).map(item => <InventoryItem key={item._id} item={item}></InventoryItem>)
