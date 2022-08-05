@@ -5,7 +5,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div style={{ background: "#008080"}} className="text-white p-5">
+    <div style={{ background: "#008080"}} className="text-white mt-5 p-5">
       <Row className="container ms-5">
         <Col md={3}>
           <h4 className="mb-4">We Specially Focused On</h4>
