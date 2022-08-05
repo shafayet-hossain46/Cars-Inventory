@@ -13,27 +13,30 @@ import { Link } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../Firebase/Firebase.init";
 
-
 const ManageInventory = () => {
   const [item, setItems] = useState([]);
   const [user, loading, error] = useAuthState(auth);
-  
+
   useEffect(() => {
-    axios.get("http://localhost:5000/inventory").then((res) => {
-      setItems(res.data);
-    });
+    axios
+      .get("https://nameless-shore-79198.herokuapp.com/inventory")
+      .then((res) => {
+        setItems(res.data);
+      });
   }, []);
 
   const handleDelete = (id) => {
-    const confirm = window.confirm('Are you sure you want to delete')
-    axios.delete(`http://localhost:5000/inventoryItem/${id}`).then((res) => {
-      if(confirm){
-        if (res.data.deletedCount > 0) {
-          const newItems = item.filter((item) => item._id !== id);
-          setItems(newItems);
+    const confirm = window.confirm("Are you sure you want to delete");
+    axios
+      .delete(`https://nameless-shore-79198.herokuapp.com/inventoryItem/${id}`)
+      .then((res) => {
+        if (confirm) {
+          if (res.data.deletedCount > 0) {
+            const newItems = item.filter((item) => item._id !== id);
+            setItems(newItems);
+          }
         }
-      }     
-    });
+      });
   };
 
   // Posting Inventory Items
@@ -51,12 +54,24 @@ const ManageInventory = () => {
 
     // insertedId
 
-    const newItems = { name, supplier, price, quantity, description, img, email };
-    axios.post("http://localhost:5000/inventoryItem", newItems)
-    .then((res) => {
-      setItems([...item, res.data]); // Backend theke first e insert kore then findOne kore response e data ta send kora hoise r ekhane array te add kore dewa hoise
-      e.target.reset()
-    });
+    const newItems = {
+      name,
+      supplier,
+      price,
+      quantity,
+      description,
+      img,
+      email,
+    };
+    axios
+      .post(
+        "https://nameless-shore-79198.herokuapp.com/inventoryItem",
+        newItems
+      )
+      .then((res) => {
+        setItems([...item, res.data]); // Backend theke first e insert kore then findOne kore response e data ta send kora hoise r ekhane array te add kore dewa hoise
+        e.target.reset();
+      });
   };
 
   return (
@@ -130,16 +145,27 @@ const ManageInventory = () => {
           ))}
         </div>
         <div className="col-md-4 px-5">
-          <Form style={{
-                  boxShadow:
-                    "rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px",
-                }} onSubmit={handlePostInventory} className="mt-5 p-4" sticky="top">
+          <Form
+            style={{
+              boxShadow:
+                "rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px",
+            }}
+            onSubmit={handlePostInventory}
+            className="mt-5 p-4"
+            sticky="top"
+          >
             <Form.Group className="mb-3" controlId="formBasicEmail">
-                
-          <h3 className="text-center mb-4 text-info">
-            Add Inventory Items
-          </h3>
-              <Form.Control type="email" className="mb-3" name="email" disabled value={user?.email} placeholder="Enter Name" />
+              <h3 className="text-center mb-4 text-info">
+                Add Inventory Items
+              </h3>
+              <Form.Control
+                type="email"
+                className="mb-3"
+                name="email"
+                disabled
+                value={user?.email}
+                placeholder="Enter Name"
+              />
               <Form.Control type="text" name="name" placeholder="Enter Name" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
