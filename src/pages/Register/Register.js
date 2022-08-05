@@ -30,9 +30,9 @@ const Register = () => {
     <Container>
       <div className="row align-items-center justify-content-center">
         <div className="col-md-8">
-          <div className="row shadow py-5 px-2 border rounded-3 mt-5 align-items-center justify-content-center">
+          <div className="row shadow py-5 px-2 border-0 rounded-3 mt-5 align-items-center justify-content-center">
             <div className="col-md-6">
-              <div className="mx-auto">
+              <div className="row mx-auto">
                 <h2 className="mb-4 text-center" style={{ color: "#008080"}}>Create An Account</h2>
                 <Form onSubmit={onSubmitData}>
                   <Form.Group className="mb-3" controlId="formBasicEmail">
