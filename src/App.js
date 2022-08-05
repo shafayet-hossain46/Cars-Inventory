@@ -12,6 +12,7 @@ import Register from './pages/Register/Register';
 import RequireAuth from './RequireAuth/RequireAuth';
 import MyItems from './pages/MyItems/MyItems';
 import Footer from './Components/Footer/Footer'
+import Reviews from './pages/Reviews/Reviews';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/home" element={<RequireAuth><Home /></RequireAuth>} />
         <Route path="/manageInventory" element={<RequireAuth><ManageInventory /></RequireAuth> } />
         <Route path="/manageInventoryItem/:id" element={<RequireAuth><ManageInventoryItem /></RequireAuth> } />
+        <Route path="/reviews" element={<RequireAuth><Reviews /></RequireAuth> } />
         <Route path="/about" element={<About />} />
         <Route path="/myItems" element={<MyItems />} />
         <Route path="/login" element={<Login />} />

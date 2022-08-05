@@ -35,6 +35,7 @@ const Header = () => {
               user?.uid ? <>
               <Nav.Link as={Link} to="/manageInventory">Manage-Items</Nav.Link>
               <Nav.Link as={Link} to="/myItems">My-Items</Nav.Link>
+              <Nav.Link as={Link} to="/reviews">Your-Reviews</Nav.Link>
               <Nav.Link onClick={logOut}>Log-Out</Nav.Link>
               </> : 
               <Nav.Link as={Link} to="/login" >Login</Nav.Link>
