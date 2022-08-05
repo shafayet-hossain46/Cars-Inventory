@@ -21,7 +21,7 @@ const Header = () => {
     return (
         <Navbar style={{ background: "#008080"}} variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand href="#">Cars-Stock</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/home">Cars-Stock</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
